@@ -394,10 +394,10 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
 
                     scope.$on('$destroy', function () {
                         angular.element(window)
-                        .off('mousemove.angular-img-cropper', '**')
-                        .off('mouseup.angular-img-cropper', '**')
-                        .off('touchmove.angular-img-cropper', '**')
-                        .off('touchend.angular-img-cropper', '**');
+                        .off('mousemove.angular-img-cropper')
+                        .off('mouseup.angular-img-cropper')
+                        .off('touchmove.angular-img-cropper')
+                        .off('touchend.angular-img-cropper');
                     });
                 }
 
