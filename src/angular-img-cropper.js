@@ -1194,8 +1194,8 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
                 };
                 ImageCropper.prototype.onTouchEnd = function (e) {
                     if (crop.isImageSet()) {
-                        for (var i = 0; i < e.changedTouches.length; i++) {
-                            var touch = e.changedTouches[i];
+                        for (var i = 0; i < e.originalEvent.changedTouches.length; i++) {
+                            var touch = e.originalEvent.changedTouches[i];
                             var dragTouch = this.getDragTouchForID(touch.identifier);
                             if (dragTouch != null) {
                                 if (dragTouch.dragHandle instanceof CornerMarker || dragTouch.dragHandle instanceof DragMarker) {
