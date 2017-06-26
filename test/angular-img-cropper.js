@@ -1087,8 +1087,8 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
                     if (crop.isImageSet()) {
                         e.preventDefault();
                         if (e.originalEvent.touches.length >= 1) {
-                            for (var i = 0; i < e.touches.length; i++) {
-                                var touch = e.touches[i];
+                            for (var i = 0; i < e.originalEvent.touches.length; i++) {
+                                var touch = e.originalEvent.touches[i];
                                 var touchPosition = this.getTouchPos(this.canvas, touch);
                                 var cropTouch = new CropTouch(touchPosition.x, touchPosition.y, touch.identifier);
                                 PointPool.instance.returnPoint(touchPosition);
