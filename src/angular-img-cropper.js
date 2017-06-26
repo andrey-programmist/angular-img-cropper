@@ -398,6 +398,10 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
                         .off('mouseup.angular-img-cropper')
                         .off('touchmove.angular-img-cropper')
                         .off('touchend.angular-img-cropper');
+
+                        angular.element(canvas)
+                        .off('mousedown.angular-img-cropper')
+                        .off('touchstart.angular-img-cropper');
                     });
                 }
 
